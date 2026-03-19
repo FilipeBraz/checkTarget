@@ -1,7 +1,0 @@
-URL: http://127.0.0.1:5550/admin
-METHOD: GET
-STATUS: 403
-CONTENT-TYPE: text/html; charset=utf-8
-
---- BODY SNIPPET ---
-<h1>Acesso negado</h1>

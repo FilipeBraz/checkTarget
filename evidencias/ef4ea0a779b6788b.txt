@@ -1,6 +1,0 @@
-URL: https://otimiza.grupohipersaude.com.br
-METHOD: OPTIONS
-STATUS: 405
-CONTENT-TYPE: 
-
---- BODY SNIPPET ---

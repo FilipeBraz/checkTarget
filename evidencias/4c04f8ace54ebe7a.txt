@@ -1,6 +1,0 @@
-URL: http://127.0.0.1:5550
-METHOD: OPTIONS
-STATUS: 200
-CONTENT-TYPE: text/html; charset=utf-8
-
---- BODY SNIPPET ---
