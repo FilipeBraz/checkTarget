@@ -1,0 +1,301 @@
+{
+  "target_url": "http://127.0.0.1:5550",
+  "target_host": "127.0.0.1",
+  "generated_at": "2026-03-19T19:45:34",
+  "executive_summary": {
+    "total_achados": 15,
+    "altas": 3,
+    "medias": 8,
+    "baixas": 4,
+    "postura": "elevado"
+  },
+  "technologies": [
+    "Flask/Werkzeug",
+    "Server: Werkzeug/3.1.3 Python/3.11.9",
+    "Swagger/OpenAPI"
+  ],
+  "endpoints": [
+    "http://127.0.0.1:5550/.env",
+    "http://127.0.0.1:5550/admin",
+    "http://127.0.0.1:5550/api/users",
+    "http://127.0.0.1:5550/dashboard",
+    "http://127.0.0.1:5550/debug",
+    "http://127.0.0.1:5550/login",
+    "http://127.0.0.1:5550/openapi.json",
+    "http://127.0.0.1:5550/upload"
+  ],
+  "risk_summary": {
+    "porta_aberta": 2,
+    "header_ausente": 8,
+    "banner_exposto": 2,
+    "cookie_inseguro": 5,
+    "comentarios_ou_indicios": 1,
+    "caminho_exposto": 7,
+    "arquivo_exposto": 3,
+    "login_flow": 1
+  },
+  "findings": [
+    {
+      "timestamp": "2026-03-19T19:45:33",
+      "category": "porta_aberta",
+      "severity": "media",
+      "target": "127.0.0.1:5000",
+      "detail": "Serviço provável: desconhecido. Banner: HTTP/1.1 404 Not Found  Content-Length: 0  Connection: close  Date: Thu, 19 Mar 2026 22:45:32 GMT  Server: Kestrel. Risco: Porta comum de desenvolvimento. Valide exposição indevida.",
+      "recommendation": "Validar necessidade da exposição e restringir por firewall, ACL ou VPN."
+    },
+    {
+      "timestamp": "2026-03-19T19:45:34",
+      "category": "header_ausente",
+      "severity": "media",
+      "target": "http://127.0.0.1:5550",
+      "detail": "Header ausente: Content-Security-Policy",
+      "recommendation": "Adicionar o header Content-Security-Policy conforme a política da aplicação."
+    },
+    {
+      "timestamp": "2026-03-19T19:45:34",
+      "category": "header_ausente",
+      "severity": "media",
+      "target": "http://127.0.0.1:5550",
+      "detail": "Header ausente: Strict-Transport-Security",
+      "recommendation": "Adicionar o header Strict-Transport-Security conforme a política da aplicação."
+    },
+    {
+      "timestamp": "2026-03-19T19:45:34",
+      "category": "header_ausente",
+      "severity": "media",
+      "target": "http://127.0.0.1:5550",
+      "detail": "Header ausente: X-Content-Type-Options",
+      "recommendation": "Adicionar o header X-Content-Type-Options conforme a política da aplicação."
+    },
+    {
+      "timestamp": "2026-03-19T19:45:34",
+      "category": "header_ausente",
+      "severity": "media",
+      "target": "http://127.0.0.1:5550",
+      "detail": "Header ausente: X-Frame-Options",
+      "recommendation": "Adicionar o header X-Frame-Options conforme a política da aplicação."
+    },
+    {
+      "timestamp": "2026-03-19T19:45:34",
+      "category": "banner_exposto",
+      "severity": "baixa",
+      "target": "http://127.0.0.1:5550",
+      "detail": "Header Server expõe: Werkzeug/3.1.3 Python/3.11.9",
+      "recommendation": "Reduzir exposição de banner e versão quando possível."
+    },
+    {
+      "timestamp": "2026-03-19T19:45:34",
+      "category": "banner_exposto",
+      "severity": "baixa",
+      "target": "http://127.0.0.1:5550",
+      "detail": "X-Powered-By expõe: Flask-Lab/1.0",
+      "recommendation": "Evitar exposição desnecessária de tecnologia."
+    },
+    {
+      "timestamp": "2026-03-19T19:45:34",
+      "category": "cookie_inseguro",
+      "severity": "alta",
+      "target": "http://127.0.0.1:5550",
+      "detail": "Cookie sem flag HttpOnly.",
+      "recommendation": "Definir HttpOnly para reduzir risco de acesso via script."
+    },
+    {
+      "timestamp": "2026-03-19T19:45:34",
+      "category": "cookie_inseguro",
+      "severity": "media",
+      "target": "http://127.0.0.1:5550",
+      "detail": "Cookie sem atributo SameSite.",
+      "recommendation": "Definir SameSite=Lax ou Strict conforme o fluxo."
+    },
+    {
+      "timestamp": "2026-03-19T19:45:34",
+      "category": "comentarios_ou_indicios",
+      "severity": "baixa",
+      "target": "http://127.0.0.1:5550",
+      "detail": "Indicadores textuais encontrados no HTML/JS: apikey, debug, fixme, secret, todo, token",
+      "recommendation": "Revisar código cliente e remover comentários ou referências sensíveis."
+    },
+    {
+      "timestamp": "2026-03-19T19:45:34",
+      "category": "caminho_exposto",
+      "severity": "media",
+      "target": "http://127.0.0.1:5550/login",
+      "detail": "Caminho acessível com status 200: /login",
+      "recommendation": "Validar se o recurso deve ser público, proteger ou remover se necessário."
+    },
+    {
+      "timestamp": "2026-03-19T19:45:34",
+      "category": "caminho_exposto",
+      "severity": "media",
+      "target": "http://127.0.0.1:5550/dashboard",
+      "detail": "Caminho acessível com status 200: /dashboard",
+      "recommendation": "Validar se o recurso deve ser público, proteger ou remover se necessário."
+    },
+    {
+      "timestamp": "2026-03-19T19:45:34",
+      "category": "caminho_exposto",
+      "severity": "alta",
+      "target": "http://127.0.0.1:5550/.env",
+      "detail": "Caminho acessível com status 200: /.env",
+      "recommendation": "Validar se o recurso deve ser público, proteger ou remover se necessário."
+    },
+    {
+      "timestamp": "2026-03-19T19:45:34",
+      "category": "arquivo_exposto",
+      "severity": "alta",
+      "target": "http://127.0.0.1:5550/backup.zip",
+      "detail": "Arquivo potencialmente sensível acessível: /backup.zip",
+      "recommendation": "Remover da área pública, proteger o recurso e revisar processo de deploy/backup."
+    },
+    {
+      "timestamp": "2026-03-19T19:45:34",
+      "category": "login_flow",
+      "severity": "baixa",
+      "target": "http://127.0.0.1:5550/login",
+      "detail": "Login path: http://127.0.0.1:5550/login | Status resposta inválida: 200 | Fluxo respondeu de forma consistente a credenciais inválidas. | Mensagem de erro de autenticação detectada.",
+      "recommendation": "Validar manualmente mensagens de erro, política de bloqueio e consistência do fluxo de autenticação."
+    }
+  ],
+  "evidences": [
+    {
+      "url": "http://127.0.0.1:5550",
+      "method": "GET",
+      "status_code": 200,
+      "content_type": "text/html; charset=utf-8",
+      "file": "evidencias\\0d9e0471e1fdd6ee.txt"
+    },
+    {
+      "url": "http://127.0.0.1:5550",
+      "method": "OPTIONS",
+      "status_code": 200,
+      "content_type": "text/html; charset=utf-8",
+      "file": "evidencias\\4c04f8ace54ebe7a.txt"
+    },
+    {
+      "url": "http://127.0.0.1:5550/login",
+      "method": "GET",
+      "status_code": 200,
+      "content_type": "text/html; charset=utf-8",
+      "file": "evidencias\\42359283ec78fa1c.txt"
+    },
+    {
+      "url": "http://127.0.0.1:5550/admin",
+      "method": "GET",
+      "status_code": 403,
+      "content_type": "text/html; charset=utf-8",
+      "file": "evidencias\\cbadbed6603b41fb.txt"
+    },
+    {
+      "url": "http://127.0.0.1:5550/dashboard",
+      "method": "GET",
+      "status_code": 200,
+      "content_type": "text/html; charset=utf-8",
+      "file": "evidencias\\3e2b9c3fe0691df3.txt"
+    },
+    {
+      "url": "http://127.0.0.1:5550/.env",
+      "method": "GET",
+      "status_code": 200,
+      "content_type": "text/plain",
+      "file": "evidencias\\d1ffab7bb5e7d342.txt"
+    },
+    {
+      "url": "http://127.0.0.1:5550/backup.bak",
+      "method": "GET",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "file": "evidencias\\39e6896214276645.txt"
+    },
+    {
+      "url": "http://127.0.0.1:5550/backup.zip",
+      "method": "GET",
+      "status_code": 200,
+      "content_type": "application/zip",
+      "file": "evidencias\\36f299db0c9e1b02.txt"
+    },
+    {
+      "url": "http://127.0.0.1:5550/backup.sql",
+      "method": "GET",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "file": "evidencias\\d6c85730fa6c5160.txt"
+    },
+    {
+      "url": "http://127.0.0.1:5550/backup.env",
+      "method": "GET",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "file": "evidencias\\d0a3fd115cd86a21.txt"
+    },
+    {
+      "url": "http://127.0.0.1:5550/config.bak",
+      "method": "GET",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "file": "evidencias\\24fd4a9896253839.txt"
+    },
+    {
+      "url": "http://127.0.0.1:5550/config.zip",
+      "method": "GET",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "file": "evidencias\\e8da79174b783c13.txt"
+    },
+    {
+      "url": "http://127.0.0.1:5550/config.sql",
+      "method": "GET",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "file": "evidencias\\087bbe2ee032c807.txt"
+    },
+    {
+      "url": "http://127.0.0.1:5550/config.env",
+      "method": "GET",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "file": "evidencias\\8117cae9e6fdc821.txt"
+    },
+    {
+      "url": "http://127.0.0.1:5550/db.bak",
+      "method": "GET",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "file": "evidencias\\e2d85234ecfd8aaf.txt"
+    },
+    {
+      "url": "http://127.0.0.1:5550/db.zip",
+      "method": "GET",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "file": "evidencias\\e32f64c777e9c4a2.txt"
+    },
+    {
+      "url": "http://127.0.0.1:5550/db.sql",
+      "method": "GET",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "file": "evidencias\\bcfb8efadfa1e165.txt"
+    },
+    {
+      "url": "http://127.0.0.1:5550/db.env",
+      "method": "GET",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "file": "evidencias\\1f6d73974f273a1d.txt"
+    },
+    {
+      "url": "http://127.0.0.1:5550/login",
+      "method": "GET",
+      "status_code": 200,
+      "content_type": "text/html; charset=utf-8",
+      "file": "evidencias\\42359283ec78fa1c.txt"
+    },
+    {
+      "url": "http://127.0.0.1:5550/login",
+      "method": "POST",
+      "status_code": 200,
+      "content_type": "text/html; charset=utf-8",
+      "file": "evidencias\\7624d0b934f6c2ed.txt"
+    }
+  ]
+}

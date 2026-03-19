@@ -1,0 +1,6 @@
+URL: http://127.0.0.1:5550/backup.zip
+METHOD: GET
+STATUS: 200
+CONTENT-TYPE: application/zip
+
+--- BODY SNIPPET ---

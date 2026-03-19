@@ -1,0 +1,190 @@
+
+    <!doctype html>
+    <html lang="pt-br">
+    <head>
+      <meta charset="utf-8">
+      <title>Relatório do Perfilador</title>
+      <style>
+        body { font-family: Arial, sans-serif; margin: 24px; color: #222; }
+        h1, h2 { color: #0f3d66; }
+        .card { border: 1px solid #ddd; padding: 16px; border-radius: 10px; margin-bottom: 16px; }
+        table { border-collapse: collapse; width: 100%; font-size: 14px; }
+        th, td { border: 1px solid #ddd; padding: 8px; vertical-align: top; }
+        th { background: #f2f2f2; text-align: left; }
+        .badge { display: inline-block; padding: 4px 8px; border-radius: 999px; background: #eef5ff; margin-right: 8px; }
+      </style>
+    </head>
+    <body>
+      <h1>Perfilador de Aplicação</h1>
+      <div class="card">
+        <h2>Resumo Executivo</h2>
+        <p>
+          <span class="badge">Total: 15</span>
+          <span class="badge">Altas: 3</span>
+          <span class="badge">Médias: 8</span>
+          <span class="badge">Baixas: 4</span>
+          <span class="badge">Postura: elevado</span>
+        </p>
+        <p>Alvo analisado: <strong>http://127.0.0.1:5550</strong></p>
+      </div>
+
+      <div class="card"><h2>Tecnologias Detectadas</h2><ul><li>Flask/Werkzeug</li><li>Server: Werkzeug/3.1.3 Python/3.11.9</li><li>Swagger/OpenAPI</li></ul></div>
+      <div class="card"><h2>Endpoints Relevantes</h2><ul><li>http://127.0.0.1:5550/.env</li><li>http://127.0.0.1:5550/admin</li><li>http://127.0.0.1:5550/api/users</li><li>http://127.0.0.1:5550/dashboard</li><li>http://127.0.0.1:5550/debug</li><li>http://127.0.0.1:5550/login</li><li>http://127.0.0.1:5550/openapi.json</li><li>http://127.0.0.1:5550/upload</li></ul></div>
+      <div class="card"><h2>Risco por Categoria</h2><ul><li><strong>header_ausente</strong>: score 8</li><li><strong>caminho_exposto</strong>: score 7</li><li><strong>cookie_inseguro</strong>: score 5</li><li><strong>arquivo_exposto</strong>: score 3</li><li><strong>porta_aberta</strong>: score 2</li><li><strong>banner_exposto</strong>: score 2</li><li><strong>comentarios_ou_indicios</strong>: score 1</li><li><strong>login_flow</strong>: score 1</li></ul></div>
+      <div class="card"><h2>Recomendações Priorizadas</h2><ul><li><strong>ALTA</strong>: Definir HttpOnly para reduzir risco de acesso via script.</li><li><strong>ALTA</strong>: Validar se o recurso deve ser público, proteger ou remover se necessário.</li><li><strong>ALTA</strong>: Remover da área pública, proteger o recurso e revisar processo de deploy/backup.</li><li><strong>MEDIA</strong>: Validar necessidade da exposição e restringir por firewall, ACL ou VPN.</li><li><strong>MEDIA</strong>: Adicionar o header Content-Security-Policy conforme a política da aplicação.</li><li><strong>MEDIA</strong>: Adicionar o header Strict-Transport-Security conforme a política da aplicação.</li><li><strong>MEDIA</strong>: Adicionar o header X-Content-Type-Options conforme a política da aplicação.</li><li><strong>MEDIA</strong>: Adicionar o header X-Frame-Options conforme a política da aplicação.</li><li><strong>MEDIA</strong>: Definir SameSite=Lax ou Strict conforme o fluxo.</li><li><strong>MEDIA</strong>: Validar se o recurso deve ser público, proteger ou remover se necessário.</li></ul></div>
+      <div class="card"><h2>Evidências HTTP</h2><ul><li>GET http://127.0.0.1:5550 -> evidencias\0d9e0471e1fdd6ee.txt</li><li>OPTIONS http://127.0.0.1:5550 -> evidencias\4c04f8ace54ebe7a.txt</li><li>GET http://127.0.0.1:5550/login -> evidencias\42359283ec78fa1c.txt</li><li>GET http://127.0.0.1:5550/admin -> evidencias\cbadbed6603b41fb.txt</li><li>GET http://127.0.0.1:5550/dashboard -> evidencias\3e2b9c3fe0691df3.txt</li><li>GET http://127.0.0.1:5550/.env -> evidencias\d1ffab7bb5e7d342.txt</li><li>GET http://127.0.0.1:5550/backup.bak -> evidencias\39e6896214276645.txt</li><li>GET http://127.0.0.1:5550/backup.zip -> evidencias\36f299db0c9e1b02.txt</li><li>GET http://127.0.0.1:5550/backup.sql -> evidencias\d6c85730fa6c5160.txt</li><li>GET http://127.0.0.1:5550/backup.env -> evidencias\d0a3fd115cd86a21.txt</li><li>GET http://127.0.0.1:5550/config.bak -> evidencias\24fd4a9896253839.txt</li><li>GET http://127.0.0.1:5550/config.zip -> evidencias\e8da79174b783c13.txt</li><li>GET http://127.0.0.1:5550/config.sql -> evidencias\087bbe2ee032c807.txt</li><li>GET http://127.0.0.1:5550/config.env -> evidencias\8117cae9e6fdc821.txt</li><li>GET http://127.0.0.1:5550/db.bak -> evidencias\e2d85234ecfd8aaf.txt</li><li>GET http://127.0.0.1:5550/db.zip -> evidencias\e32f64c777e9c4a2.txt</li><li>GET http://127.0.0.1:5550/db.sql -> evidencias\bcfb8efadfa1e165.txt</li><li>GET http://127.0.0.1:5550/db.env -> evidencias\1f6d73974f273a1d.txt</li><li>GET http://127.0.0.1:5550/login -> evidencias\42359283ec78fa1c.txt</li><li>POST http://127.0.0.1:5550/login -> evidencias\7624d0b934f6c2ed.txt</li></ul></div>
+
+      <div class="card">
+        <h2>Achados</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Timestamp</th>
+              <th>Categoria</th>
+              <th>Severidade</th>
+              <th>Alvo</th>
+              <th>Detalhe</th>
+              <th>Recomendação</th>
+            </tr>
+          </thead>
+          <tbody>
+        <tr>
+            <td>2026-03-19T19:45:33</td>
+            <td>porta_aberta</td>
+            <td>media</td>
+            <td>127.0.0.1:5000</td>
+            <td>Serviço provável: desconhecido. Banner: HTTP/1.1 404 Not Found  Content-Length: 0  Connection: close  Date: Thu, 19 Mar 2026 22:45:32 GMT  Server: Kestrel. Risco: Porta comum de desenvolvimento. Valide exposição indevida.</td>
+            <td>Validar necessidade da exposição e restringir por firewall, ACL ou VPN.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-03-19T19:45:34</td>
+            <td>header_ausente</td>
+            <td>media</td>
+            <td>http://127.0.0.1:5550</td>
+            <td>Header ausente: Content-Security-Policy</td>
+            <td>Adicionar o header Content-Security-Policy conforme a política da aplicação.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-03-19T19:45:34</td>
+            <td>header_ausente</td>
+            <td>media</td>
+            <td>http://127.0.0.1:5550</td>
+            <td>Header ausente: Strict-Transport-Security</td>
+            <td>Adicionar o header Strict-Transport-Security conforme a política da aplicação.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-03-19T19:45:34</td>
+            <td>header_ausente</td>
+            <td>media</td>
+            <td>http://127.0.0.1:5550</td>
+            <td>Header ausente: X-Content-Type-Options</td>
+            <td>Adicionar o header X-Content-Type-Options conforme a política da aplicação.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-03-19T19:45:34</td>
+            <td>header_ausente</td>
+            <td>media</td>
+            <td>http://127.0.0.1:5550</td>
+            <td>Header ausente: X-Frame-Options</td>
+            <td>Adicionar o header X-Frame-Options conforme a política da aplicação.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-03-19T19:45:34</td>
+            <td>banner_exposto</td>
+            <td>baixa</td>
+            <td>http://127.0.0.1:5550</td>
+            <td>Header Server expõe: Werkzeug/3.1.3 Python/3.11.9</td>
+            <td>Reduzir exposição de banner e versão quando possível.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-03-19T19:45:34</td>
+            <td>banner_exposto</td>
+            <td>baixa</td>
+            <td>http://127.0.0.1:5550</td>
+            <td>X-Powered-By expõe: Flask-Lab/1.0</td>
+            <td>Evitar exposição desnecessária de tecnologia.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-03-19T19:45:34</td>
+            <td>cookie_inseguro</td>
+            <td>alta</td>
+            <td>http://127.0.0.1:5550</td>
+            <td>Cookie sem flag HttpOnly.</td>
+            <td>Definir HttpOnly para reduzir risco de acesso via script.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-03-19T19:45:34</td>
+            <td>cookie_inseguro</td>
+            <td>media</td>
+            <td>http://127.0.0.1:5550</td>
+            <td>Cookie sem atributo SameSite.</td>
+            <td>Definir SameSite=Lax ou Strict conforme o fluxo.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-03-19T19:45:34</td>
+            <td>comentarios_ou_indicios</td>
+            <td>baixa</td>
+            <td>http://127.0.0.1:5550</td>
+            <td>Indicadores textuais encontrados no HTML/JS: apikey, debug, fixme, secret, todo, token</td>
+            <td>Revisar código cliente e remover comentários ou referências sensíveis.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-03-19T19:45:34</td>
+            <td>caminho_exposto</td>
+            <td>media</td>
+            <td>http://127.0.0.1:5550/login</td>
+            <td>Caminho acessível com status 200: /login</td>
+            <td>Validar se o recurso deve ser público, proteger ou remover se necessário.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-03-19T19:45:34</td>
+            <td>caminho_exposto</td>
+            <td>media</td>
+            <td>http://127.0.0.1:5550/dashboard</td>
+            <td>Caminho acessível com status 200: /dashboard</td>
+            <td>Validar se o recurso deve ser público, proteger ou remover se necessário.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-03-19T19:45:34</td>
+            <td>caminho_exposto</td>
+            <td>alta</td>
+            <td>http://127.0.0.1:5550/.env</td>
+            <td>Caminho acessível com status 200: /.env</td>
+            <td>Validar se o recurso deve ser público, proteger ou remover se necessário.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-03-19T19:45:34</td>
+            <td>arquivo_exposto</td>
+            <td>alta</td>
+            <td>http://127.0.0.1:5550/backup.zip</td>
+            <td>Arquivo potencialmente sensível acessível: /backup.zip</td>
+            <td>Remover da área pública, proteger o recurso e revisar processo de deploy/backup.</td>
+        </tr>
+        
+        <tr>
+            <td>2026-03-19T19:45:34</td>
+            <td>login_flow</td>
+            <td>baixa</td>
+            <td>http://127.0.0.1:5550/login</td>
+            <td>Login path: http://127.0.0.1:5550/login | Status resposta inválida: 200 | Fluxo respondeu de forma consistente a credenciais inválidas. | Mensagem de erro de autenticação detectada.</td>
+            <td>Validar manualmente mensagens de erro, política de bloqueio e consistência do fluxo de autenticação.</td>
+        </tr>
+        </tbody>
+        </table>
+      </div>
+    </body>
+    </html>
+    

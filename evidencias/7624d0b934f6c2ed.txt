@@ -1,0 +1,28 @@
+URL: http://127.0.0.1:5550/login
+METHOD: POST
+STATUS: 200
+CONTENT-TYPE: text/html; charset=utf-8
+
+--- BODY SNIPPET ---
+
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <title>Login</title>
+</head>
+<body>
+  <h1>Login do Lab</h1>
+  <form method="POST" action="/login">
+    <label>Usuário</label><br>
+    <input type="text" name="username"><br><br>
+
+    <label>Senha</label><br>
+    <input type="password" name="password"><br><br>
+
+    <button type="submit">Entrar</button>
+  </form>
+
+  <p style='color:red'>Credenciais inválidas.</p>
+</body>
+</html>

@@ -1,0 +1,16 @@
+timestamp,category,severity,target,detail,recommendation
+2026-03-19T19:45:33,porta_aberta,media,127.0.0.1:5000,"Serviço provável: desconhecido. Banner: HTTP/1.1 404 Not Found  Content-Length: 0  Connection: close  Date: Thu, 19 Mar 2026 22:45:32 GMT  Server: Kestrel. Risco: Porta comum de desenvolvimento. Valide exposição indevida.","Validar necessidade da exposição e restringir por firewall, ACL ou VPN."
+2026-03-19T19:45:34,header_ausente,media,http://127.0.0.1:5550,Header ausente: Content-Security-Policy,Adicionar o header Content-Security-Policy conforme a política da aplicação.
+2026-03-19T19:45:34,header_ausente,media,http://127.0.0.1:5550,Header ausente: Strict-Transport-Security,Adicionar o header Strict-Transport-Security conforme a política da aplicação.
+2026-03-19T19:45:34,header_ausente,media,http://127.0.0.1:5550,Header ausente: X-Content-Type-Options,Adicionar o header X-Content-Type-Options conforme a política da aplicação.
+2026-03-19T19:45:34,header_ausente,media,http://127.0.0.1:5550,Header ausente: X-Frame-Options,Adicionar o header X-Frame-Options conforme a política da aplicação.
+2026-03-19T19:45:34,banner_exposto,baixa,http://127.0.0.1:5550,Header Server expõe: Werkzeug/3.1.3 Python/3.11.9,Reduzir exposição de banner e versão quando possível.
+2026-03-19T19:45:34,banner_exposto,baixa,http://127.0.0.1:5550,X-Powered-By expõe: Flask-Lab/1.0,Evitar exposição desnecessária de tecnologia.
+2026-03-19T19:45:34,cookie_inseguro,alta,http://127.0.0.1:5550,Cookie sem flag HttpOnly.,Definir HttpOnly para reduzir risco de acesso via script.
+2026-03-19T19:45:34,cookie_inseguro,media,http://127.0.0.1:5550,Cookie sem atributo SameSite.,Definir SameSite=Lax ou Strict conforme o fluxo.
+2026-03-19T19:45:34,comentarios_ou_indicios,baixa,http://127.0.0.1:5550,"Indicadores textuais encontrados no HTML/JS: apikey, debug, fixme, secret, todo, token",Revisar código cliente e remover comentários ou referências sensíveis.
+2026-03-19T19:45:34,caminho_exposto,media,http://127.0.0.1:5550/login,Caminho acessível com status 200: /login,"Validar se o recurso deve ser público, proteger ou remover se necessário."
+2026-03-19T19:45:34,caminho_exposto,media,http://127.0.0.1:5550/dashboard,Caminho acessível com status 200: /dashboard,"Validar se o recurso deve ser público, proteger ou remover se necessário."
+2026-03-19T19:45:34,caminho_exposto,alta,http://127.0.0.1:5550/.env,Caminho acessível com status 200: /.env,"Validar se o recurso deve ser público, proteger ou remover se necessário."
+2026-03-19T19:45:34,arquivo_exposto,alta,http://127.0.0.1:5550/backup.zip,Arquivo potencialmente sensível acessível: /backup.zip,"Remover da área pública, proteger o recurso e revisar processo de deploy/backup."
+2026-03-19T19:45:34,login_flow,baixa,http://127.0.0.1:5550/login,Login path: http://127.0.0.1:5550/login | Status resposta inválida: 200 | Fluxo respondeu de forma consistente a credenciais inválidas. | Mensagem de erro de autenticação detectada.,"Validar manualmente mensagens de erro, política de bloqueio e consistência do fluxo de autenticação."

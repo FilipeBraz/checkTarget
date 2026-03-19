@@ -1,0 +1,29 @@
+target_url: "http://127.0.0.1:5550"
+target_host: "127.0.0.1"
+
+timeouts:
+  http: 5
+  socket: 1
+
+outputs:
+  csv: "perfilador_relatorio.csv"
+  html: "perfilador_relatorio.html"
+  json: "perfilador_relatorio.json"
+  evidence_dir: "evidencias"
+
+scan:
+  ports: [80, 443, 5000, 8080]
+  common_paths: ["/login", "/admin", "/dashboard", "/.env"]
+  exposed_file_extensions: [".bak", ".zip", ".sql", ".env"]
+  candidate_base_names: ["backup", "config", "db"]
+  security_headers:
+    - "Content-Security-Policy"
+    - "Strict-Transport-Security"
+    - "X-Content-Type-Options"
+    - "X-Frame-Options"
+
+login_flow:
+  enabled: true
+  login_paths: ["/login"]
+  invalid_username: "usuario_fake_lab"
+  invalid_password: "SenhaFakeErrada123!"
