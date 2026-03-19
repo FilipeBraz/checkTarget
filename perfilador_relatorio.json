@@ -1,301 +1,341 @@
 {
-  "target_url": "http://127.0.0.1:5550",
+  "target_url": "https://monitordemarcas-frontend-575503576839.us-central1.run.app",
   "target_host": "127.0.0.1",
-  "generated_at": "2026-03-19T19:45:34",
+  "generated_at": "2026-03-19T20:06:25",
   "executive_summary": {
-    "total_achados": 15,
-    "altas": 3,
+    "total_achados": 22,
+    "altas": 13,
     "medias": 8,
-    "baixas": 4,
+    "baixas": 1,
     "postura": "elevado"
   },
   "technologies": [
-    "Flask/Werkzeug",
-    "Server: Werkzeug/3.1.3 Python/3.11.9",
-    "Swagger/OpenAPI"
+    "Server: Google Frontend"
   ],
   "endpoints": [
-    "http://127.0.0.1:5550/.env",
-    "http://127.0.0.1:5550/admin",
-    "http://127.0.0.1:5550/api/users",
-    "http://127.0.0.1:5550/dashboard",
-    "http://127.0.0.1:5550/debug",
-    "http://127.0.0.1:5550/login",
-    "http://127.0.0.1:5550/openapi.json",
-    "http://127.0.0.1:5550/upload"
+    "https://monitordemarcas-frontend-575503576839.us-central1.run.app/.env",
+    "https://monitordemarcas-frontend-575503576839.us-central1.run.app/admin",
+    "https://monitordemarcas-frontend-575503576839.us-central1.run.app/dashboard",
+    "https://monitordemarcas-frontend-575503576839.us-central1.run.app/login"
   ],
   "risk_summary": {
     "porta_aberta": 2,
     "header_ausente": 8,
-    "banner_exposto": 2,
-    "cookie_inseguro": 5,
-    "comentarios_ou_indicios": 1,
-    "caminho_exposto": 7,
-    "arquivo_exposto": 3,
-    "login_flow": 1
+    "banner_exposto": 1,
+    "caminho_exposto": 9,
+    "arquivo_exposto": 36
   },
   "findings": [
     {
-      "timestamp": "2026-03-19T19:45:33",
+      "timestamp": "2026-03-19T20:06:13",
       "category": "porta_aberta",
       "severity": "media",
       "target": "127.0.0.1:5000",
-      "detail": "Serviço provável: desconhecido. Banner: HTTP/1.1 404 Not Found  Content-Length: 0  Connection: close  Date: Thu, 19 Mar 2026 22:45:32 GMT  Server: Kestrel. Risco: Porta comum de desenvolvimento. Valide exposição indevida.",
+      "detail": "Serviço provável: desconhecido. Banner: HTTP/1.1 404 Not Found  Content-Length: 0  Connection: close  Date: Thu, 19 Mar 2026 23:06:12 GMT  Server: Kestrel. Risco: Porta comum de desenvolvimento. Valide exposição indevida.",
       "recommendation": "Validar necessidade da exposição e restringir por firewall, ACL ou VPN."
     },
     {
-      "timestamp": "2026-03-19T19:45:34",
+      "timestamp": "2026-03-19T20:06:15",
       "category": "header_ausente",
       "severity": "media",
-      "target": "http://127.0.0.1:5550",
+      "target": "https://monitordemarcas-frontend-575503576839.us-central1.run.app",
       "detail": "Header ausente: Content-Security-Policy",
       "recommendation": "Adicionar o header Content-Security-Policy conforme a política da aplicação."
     },
     {
-      "timestamp": "2026-03-19T19:45:34",
+      "timestamp": "2026-03-19T20:06:15",
       "category": "header_ausente",
       "severity": "media",
-      "target": "http://127.0.0.1:5550",
+      "target": "https://monitordemarcas-frontend-575503576839.us-central1.run.app",
       "detail": "Header ausente: Strict-Transport-Security",
       "recommendation": "Adicionar o header Strict-Transport-Security conforme a política da aplicação."
     },
     {
-      "timestamp": "2026-03-19T19:45:34",
+      "timestamp": "2026-03-19T20:06:15",
       "category": "header_ausente",
       "severity": "media",
-      "target": "http://127.0.0.1:5550",
+      "target": "https://monitordemarcas-frontend-575503576839.us-central1.run.app",
       "detail": "Header ausente: X-Content-Type-Options",
       "recommendation": "Adicionar o header X-Content-Type-Options conforme a política da aplicação."
     },
     {
-      "timestamp": "2026-03-19T19:45:34",
+      "timestamp": "2026-03-19T20:06:15",
       "category": "header_ausente",
       "severity": "media",
-      "target": "http://127.0.0.1:5550",
+      "target": "https://monitordemarcas-frontend-575503576839.us-central1.run.app",
       "detail": "Header ausente: X-Frame-Options",
       "recommendation": "Adicionar o header X-Frame-Options conforme a política da aplicação."
     },
     {
-      "timestamp": "2026-03-19T19:45:34",
+      "timestamp": "2026-03-19T20:06:15",
       "category": "banner_exposto",
       "severity": "baixa",
-      "target": "http://127.0.0.1:5550",
-      "detail": "Header Server expõe: Werkzeug/3.1.3 Python/3.11.9",
+      "target": "https://monitordemarcas-frontend-575503576839.us-central1.run.app",
+      "detail": "Header Server expõe: Google Frontend",
       "recommendation": "Reduzir exposição de banner e versão quando possível."
     },
     {
-      "timestamp": "2026-03-19T19:45:34",
-      "category": "banner_exposto",
-      "severity": "baixa",
-      "target": "http://127.0.0.1:5550",
-      "detail": "X-Powered-By expõe: Flask-Lab/1.0",
-      "recommendation": "Evitar exposição desnecessária de tecnologia."
-    },
-    {
-      "timestamp": "2026-03-19T19:45:34",
-      "category": "cookie_inseguro",
-      "severity": "alta",
-      "target": "http://127.0.0.1:5550",
-      "detail": "Cookie sem flag HttpOnly.",
-      "recommendation": "Definir HttpOnly para reduzir risco de acesso via script."
-    },
-    {
-      "timestamp": "2026-03-19T19:45:34",
-      "category": "cookie_inseguro",
-      "severity": "media",
-      "target": "http://127.0.0.1:5550",
-      "detail": "Cookie sem atributo SameSite.",
-      "recommendation": "Definir SameSite=Lax ou Strict conforme o fluxo."
-    },
-    {
-      "timestamp": "2026-03-19T19:45:34",
-      "category": "comentarios_ou_indicios",
-      "severity": "baixa",
-      "target": "http://127.0.0.1:5550",
-      "detail": "Indicadores textuais encontrados no HTML/JS: apikey, debug, fixme, secret, todo, token",
-      "recommendation": "Revisar código cliente e remover comentários ou referências sensíveis."
-    },
-    {
-      "timestamp": "2026-03-19T19:45:34",
+      "timestamp": "2026-03-19T20:06:16",
       "category": "caminho_exposto",
       "severity": "media",
-      "target": "http://127.0.0.1:5550/login",
+      "target": "https://monitordemarcas-frontend-575503576839.us-central1.run.app/login",
       "detail": "Caminho acessível com status 200: /login",
       "recommendation": "Validar se o recurso deve ser público, proteger ou remover se necessário."
     },
     {
-      "timestamp": "2026-03-19T19:45:34",
+      "timestamp": "2026-03-19T20:06:16",
       "category": "caminho_exposto",
       "severity": "media",
-      "target": "http://127.0.0.1:5550/dashboard",
+      "target": "https://monitordemarcas-frontend-575503576839.us-central1.run.app/admin",
+      "detail": "Caminho acessível com status 200: /admin",
+      "recommendation": "Validar se o recurso deve ser público, proteger ou remover se necessário."
+    },
+    {
+      "timestamp": "2026-03-19T20:06:17",
+      "category": "caminho_exposto",
+      "severity": "media",
+      "target": "https://monitordemarcas-frontend-575503576839.us-central1.run.app/dashboard",
       "detail": "Caminho acessível com status 200: /dashboard",
       "recommendation": "Validar se o recurso deve ser público, proteger ou remover se necessário."
     },
     {
-      "timestamp": "2026-03-19T19:45:34",
+      "timestamp": "2026-03-19T20:06:17",
       "category": "caminho_exposto",
       "severity": "alta",
-      "target": "http://127.0.0.1:5550/.env",
+      "target": "https://monitordemarcas-frontend-575503576839.us-central1.run.app/.env",
       "detail": "Caminho acessível com status 200: /.env",
       "recommendation": "Validar se o recurso deve ser público, proteger ou remover se necessário."
     },
     {
-      "timestamp": "2026-03-19T19:45:34",
+      "timestamp": "2026-03-19T20:06:18",
       "category": "arquivo_exposto",
       "severity": "alta",
-      "target": "http://127.0.0.1:5550/backup.zip",
+      "target": "https://monitordemarcas-frontend-575503576839.us-central1.run.app/backup.bak",
+      "detail": "Arquivo potencialmente sensível acessível: /backup.bak",
+      "recommendation": "Remover da área pública, proteger o recurso e revisar processo de deploy/backup."
+    },
+    {
+      "timestamp": "2026-03-19T20:06:18",
+      "category": "arquivo_exposto",
+      "severity": "alta",
+      "target": "https://monitordemarcas-frontend-575503576839.us-central1.run.app/backup.zip",
       "detail": "Arquivo potencialmente sensível acessível: /backup.zip",
       "recommendation": "Remover da área pública, proteger o recurso e revisar processo de deploy/backup."
     },
     {
-      "timestamp": "2026-03-19T19:45:34",
-      "category": "login_flow",
-      "severity": "baixa",
-      "target": "http://127.0.0.1:5550/login",
-      "detail": "Login path: http://127.0.0.1:5550/login | Status resposta inválida: 200 | Fluxo respondeu de forma consistente a credenciais inválidas. | Mensagem de erro de autenticação detectada.",
-      "recommendation": "Validar manualmente mensagens de erro, política de bloqueio e consistência do fluxo de autenticação."
+      "timestamp": "2026-03-19T20:06:19",
+      "category": "arquivo_exposto",
+      "severity": "alta",
+      "target": "https://monitordemarcas-frontend-575503576839.us-central1.run.app/backup.sql",
+      "detail": "Arquivo potencialmente sensível acessível: /backup.sql",
+      "recommendation": "Remover da área pública, proteger o recurso e revisar processo de deploy/backup."
+    },
+    {
+      "timestamp": "2026-03-19T20:06:20",
+      "category": "arquivo_exposto",
+      "severity": "alta",
+      "target": "https://monitordemarcas-frontend-575503576839.us-central1.run.app/backup.env",
+      "detail": "Arquivo potencialmente sensível acessível: /backup.env",
+      "recommendation": "Remover da área pública, proteger o recurso e revisar processo de deploy/backup."
+    },
+    {
+      "timestamp": "2026-03-19T20:06:20",
+      "category": "arquivo_exposto",
+      "severity": "alta",
+      "target": "https://monitordemarcas-frontend-575503576839.us-central1.run.app/config.bak",
+      "detail": "Arquivo potencialmente sensível acessível: /config.bak",
+      "recommendation": "Remover da área pública, proteger o recurso e revisar processo de deploy/backup."
+    },
+    {
+      "timestamp": "2026-03-19T20:06:21",
+      "category": "arquivo_exposto",
+      "severity": "alta",
+      "target": "https://monitordemarcas-frontend-575503576839.us-central1.run.app/config.zip",
+      "detail": "Arquivo potencialmente sensível acessível: /config.zip",
+      "recommendation": "Remover da área pública, proteger o recurso e revisar processo de deploy/backup."
+    },
+    {
+      "timestamp": "2026-03-19T20:06:21",
+      "category": "arquivo_exposto",
+      "severity": "alta",
+      "target": "https://monitordemarcas-frontend-575503576839.us-central1.run.app/config.sql",
+      "detail": "Arquivo potencialmente sensível acessível: /config.sql",
+      "recommendation": "Remover da área pública, proteger o recurso e revisar processo de deploy/backup."
+    },
+    {
+      "timestamp": "2026-03-19T20:06:22",
+      "category": "arquivo_exposto",
+      "severity": "alta",
+      "target": "https://monitordemarcas-frontend-575503576839.us-central1.run.app/config.env",
+      "detail": "Arquivo potencialmente sensível acessível: /config.env",
+      "recommendation": "Remover da área pública, proteger o recurso e revisar processo de deploy/backup."
+    },
+    {
+      "timestamp": "2026-03-19T20:06:22",
+      "category": "arquivo_exposto",
+      "severity": "alta",
+      "target": "https://monitordemarcas-frontend-575503576839.us-central1.run.app/db.bak",
+      "detail": "Arquivo potencialmente sensível acessível: /db.bak",
+      "recommendation": "Remover da área pública, proteger o recurso e revisar processo de deploy/backup."
+    },
+    {
+      "timestamp": "2026-03-19T20:06:23",
+      "category": "arquivo_exposto",
+      "severity": "alta",
+      "target": "https://monitordemarcas-frontend-575503576839.us-central1.run.app/db.zip",
+      "detail": "Arquivo potencialmente sensível acessível: /db.zip",
+      "recommendation": "Remover da área pública, proteger o recurso e revisar processo de deploy/backup."
+    },
+    {
+      "timestamp": "2026-03-19T20:06:23",
+      "category": "arquivo_exposto",
+      "severity": "alta",
+      "target": "https://monitordemarcas-frontend-575503576839.us-central1.run.app/db.sql",
+      "detail": "Arquivo potencialmente sensível acessível: /db.sql",
+      "recommendation": "Remover da área pública, proteger o recurso e revisar processo de deploy/backup."
+    },
+    {
+      "timestamp": "2026-03-19T20:06:24",
+      "category": "arquivo_exposto",
+      "severity": "alta",
+      "target": "https://monitordemarcas-frontend-575503576839.us-central1.run.app/db.env",
+      "detail": "Arquivo potencialmente sensível acessível: /db.env",
+      "recommendation": "Remover da área pública, proteger o recurso e revisar processo de deploy/backup."
     }
   ],
   "evidences": [
     {
-      "url": "http://127.0.0.1:5550",
+      "url": "https://monitordemarcas-frontend-575503576839.us-central1.run.app",
       "method": "GET",
       "status_code": 200,
-      "content_type": "text/html; charset=utf-8",
-      "file": "evidencias\\0d9e0471e1fdd6ee.txt"
+      "content_type": "text/html",
+      "file": "evidencias\\dc720a313df67233.txt"
     },
     {
-      "url": "http://127.0.0.1:5550",
+      "url": "https://monitordemarcas-frontend-575503576839.us-central1.run.app",
       "method": "OPTIONS",
-      "status_code": 200,
-      "content_type": "text/html; charset=utf-8",
-      "file": "evidencias\\4c04f8ace54ebe7a.txt"
+      "status_code": 405,
+      "content_type": "text/html",
+      "file": "evidencias\\6dd1dfcfc32be905.txt"
     },
     {
-      "url": "http://127.0.0.1:5550/login",
+      "url": "https://monitordemarcas-frontend-575503576839.us-central1.run.app/login",
       "method": "GET",
       "status_code": 200,
-      "content_type": "text/html; charset=utf-8",
-      "file": "evidencias\\42359283ec78fa1c.txt"
+      "content_type": "text/html",
+      "file": "evidencias\\3ec500fb00625afd.txt"
     },
     {
-      "url": "http://127.0.0.1:5550/admin",
-      "method": "GET",
-      "status_code": 403,
-      "content_type": "text/html; charset=utf-8",
-      "file": "evidencias\\cbadbed6603b41fb.txt"
-    },
-    {
-      "url": "http://127.0.0.1:5550/dashboard",
+      "url": "https://monitordemarcas-frontend-575503576839.us-central1.run.app/admin",
       "method": "GET",
       "status_code": 200,
-      "content_type": "text/html; charset=utf-8",
-      "file": "evidencias\\3e2b9c3fe0691df3.txt"
+      "content_type": "text/html",
+      "file": "evidencias\\06fbdcb8edb83cfd.txt"
     },
     {
-      "url": "http://127.0.0.1:5550/.env",
+      "url": "https://monitordemarcas-frontend-575503576839.us-central1.run.app/dashboard",
       "method": "GET",
       "status_code": 200,
-      "content_type": "text/plain",
-      "file": "evidencias\\d1ffab7bb5e7d342.txt"
+      "content_type": "text/html",
+      "file": "evidencias\\1e7eff9207f516d1.txt"
     },
     {
-      "url": "http://127.0.0.1:5550/backup.bak",
-      "method": "GET",
-      "status_code": 404,
-      "content_type": "text/html; charset=utf-8",
-      "file": "evidencias\\39e6896214276645.txt"
-    },
-    {
-      "url": "http://127.0.0.1:5550/backup.zip",
+      "url": "https://monitordemarcas-frontend-575503576839.us-central1.run.app/.env",
       "method": "GET",
       "status_code": 200,
-      "content_type": "application/zip",
-      "file": "evidencias\\36f299db0c9e1b02.txt"
+      "content_type": "text/html",
+      "file": "evidencias\\bb59543e9782de9d.txt"
     },
     {
-      "url": "http://127.0.0.1:5550/backup.sql",
-      "method": "GET",
-      "status_code": 404,
-      "content_type": "text/html; charset=utf-8",
-      "file": "evidencias\\d6c85730fa6c5160.txt"
-    },
-    {
-      "url": "http://127.0.0.1:5550/backup.env",
-      "method": "GET",
-      "status_code": 404,
-      "content_type": "text/html; charset=utf-8",
-      "file": "evidencias\\d0a3fd115cd86a21.txt"
-    },
-    {
-      "url": "http://127.0.0.1:5550/config.bak",
-      "method": "GET",
-      "status_code": 404,
-      "content_type": "text/html; charset=utf-8",
-      "file": "evidencias\\24fd4a9896253839.txt"
-    },
-    {
-      "url": "http://127.0.0.1:5550/config.zip",
-      "method": "GET",
-      "status_code": 404,
-      "content_type": "text/html; charset=utf-8",
-      "file": "evidencias\\e8da79174b783c13.txt"
-    },
-    {
-      "url": "http://127.0.0.1:5550/config.sql",
-      "method": "GET",
-      "status_code": 404,
-      "content_type": "text/html; charset=utf-8",
-      "file": "evidencias\\087bbe2ee032c807.txt"
-    },
-    {
-      "url": "http://127.0.0.1:5550/config.env",
-      "method": "GET",
-      "status_code": 404,
-      "content_type": "text/html; charset=utf-8",
-      "file": "evidencias\\8117cae9e6fdc821.txt"
-    },
-    {
-      "url": "http://127.0.0.1:5550/db.bak",
-      "method": "GET",
-      "status_code": 404,
-      "content_type": "text/html; charset=utf-8",
-      "file": "evidencias\\e2d85234ecfd8aaf.txt"
-    },
-    {
-      "url": "http://127.0.0.1:5550/db.zip",
-      "method": "GET",
-      "status_code": 404,
-      "content_type": "text/html; charset=utf-8",
-      "file": "evidencias\\e32f64c777e9c4a2.txt"
-    },
-    {
-      "url": "http://127.0.0.1:5550/db.sql",
-      "method": "GET",
-      "status_code": 404,
-      "content_type": "text/html; charset=utf-8",
-      "file": "evidencias\\bcfb8efadfa1e165.txt"
-    },
-    {
-      "url": "http://127.0.0.1:5550/db.env",
-      "method": "GET",
-      "status_code": 404,
-      "content_type": "text/html; charset=utf-8",
-      "file": "evidencias\\1f6d73974f273a1d.txt"
-    },
-    {
-      "url": "http://127.0.0.1:5550/login",
+      "url": "https://monitordemarcas-frontend-575503576839.us-central1.run.app/backup.bak",
       "method": "GET",
       "status_code": 200,
-      "content_type": "text/html; charset=utf-8",
-      "file": "evidencias\\42359283ec78fa1c.txt"
+      "content_type": "text/html",
+      "file": "evidencias\\729f28c9dbe700d8.txt"
     },
     {
-      "url": "http://127.0.0.1:5550/login",
-      "method": "POST",
+      "url": "https://monitordemarcas-frontend-575503576839.us-central1.run.app/backup.zip",
+      "method": "GET",
       "status_code": 200,
-      "content_type": "text/html; charset=utf-8",
-      "file": "evidencias\\7624d0b934f6c2ed.txt"
+      "content_type": "text/html",
+      "file": "evidencias\\987fafe2826767be.txt"
+    },
+    {
+      "url": "https://monitordemarcas-frontend-575503576839.us-central1.run.app/backup.sql",
+      "method": "GET",
+      "status_code": 200,
+      "content_type": "text/html",
+      "file": "evidencias\\28808ee25d43060b.txt"
+    },
+    {
+      "url": "https://monitordemarcas-frontend-575503576839.us-central1.run.app/backup.env",
+      "method": "GET",
+      "status_code": 200,
+      "content_type": "text/html",
+      "file": "evidencias\\7b28228b5d9cee80.txt"
+    },
+    {
+      "url": "https://monitordemarcas-frontend-575503576839.us-central1.run.app/config.bak",
+      "method": "GET",
+      "status_code": 200,
+      "content_type": "text/html",
+      "file": "evidencias\\0559d9ec18d1b017.txt"
+    },
+    {
+      "url": "https://monitordemarcas-frontend-575503576839.us-central1.run.app/config.zip",
+      "method": "GET",
+      "status_code": 200,
+      "content_type": "text/html",
+      "file": "evidencias\\9cf6c2d040486280.txt"
+    },
+    {
+      "url": "https://monitordemarcas-frontend-575503576839.us-central1.run.app/config.sql",
+      "method": "GET",
+      "status_code": 200,
+      "content_type": "text/html",
+      "file": "evidencias\\d8910714d0cbc49d.txt"
+    },
+    {
+      "url": "https://monitordemarcas-frontend-575503576839.us-central1.run.app/config.env",
+      "method": "GET",
+      "status_code": 200,
+      "content_type": "text/html",
+      "file": "evidencias\\cb8f83bfcef6f65e.txt"
+    },
+    {
+      "url": "https://monitordemarcas-frontend-575503576839.us-central1.run.app/db.bak",
+      "method": "GET",
+      "status_code": 200,
+      "content_type": "text/html",
+      "file": "evidencias\\64e3ac9ea0dfde95.txt"
+    },
+    {
+      "url": "https://monitordemarcas-frontend-575503576839.us-central1.run.app/db.zip",
+      "method": "GET",
+      "status_code": 200,
+      "content_type": "text/html",
+      "file": "evidencias\\9dcb851e89ba0cb9.txt"
+    },
+    {
+      "url": "https://monitordemarcas-frontend-575503576839.us-central1.run.app/db.sql",
+      "method": "GET",
+      "status_code": 200,
+      "content_type": "text/html",
+      "file": "evidencias\\288cc72a6a78b244.txt"
+    },
+    {
+      "url": "https://monitordemarcas-frontend-575503576839.us-central1.run.app/db.env",
+      "method": "GET",
+      "status_code": 200,
+      "content_type": "text/html",
+      "file": "evidencias\\4ee83b1257e0d06c.txt"
+    },
+    {
+      "url": "https://monitordemarcas-frontend-575503576839.us-central1.run.app/login",
+      "method": "GET",
+      "status_code": 200,
+      "content_type": "text/html",
+      "file": "evidencias\\3ec500fb00625afd.txt"
     }
   ]
 }
